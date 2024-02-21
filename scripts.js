@@ -20,7 +20,8 @@ let imagenes = document.getElementsByTagName("img");
 // Les damos la propiedad de estar "escuchando" para que cuando se haga click se llame a la funcion que hemos definido
 for (let i = 0; i < imagenes.length; i++) {
     imagenes[i].addEventListener("click", function () {
-        imagenes[i].src = "./assets/magic-1.gif";
+       /* imagenes[i].src = "./assets/magic-1.gif"; // Esto funciona */
+       imagenes[i].src = getRandom(gifs); // Esto es una prueba
     });
 }
 
@@ -41,8 +42,6 @@ let articulos = document.getElementsByTagName("article");
 for (let i = 0; i < articulos.length; i++) {
     articulos[i].style.background = "blue";
 }
-
-/**HASTA AQUÍ OK */
 
 
 /* 3. Cuando el cursor esté sobre alguno de los siguientes elementos, seguir las instrucciones siguientes, y devolver dicho elemento a su estado original cuando salga el cursor. */
@@ -68,7 +67,6 @@ for (let i = 0; i < imagenes.length; i++) {
 }
 
 
-
 /* 3.2 Párrafos: Cambia el color del texto y el de fondo por uno cualquiera. */
 
 // Ya tenemos un array parrafos
@@ -80,7 +78,7 @@ for (let i = 0; i < parrafos.length; i++) {
 for (let i = 0; i < parrafos.length; i++) {
 
     parrafos[i].addEventListener("mouseover", function () {
-        parrafos[i].style.color = "green";
+        parrafos[i].style.color = getRandom(paleta);
     });
 
     parrafos[i].addEventListener("mouseout", function () {
@@ -99,7 +97,7 @@ for (let i = 0; i < articulos.length; i++) {
 for (let i = 0; i < articulos.length; i++) {
 
     articulos[i].addEventListener("mouseover", function () {
-        articulos[i].style.background = "green";
+        articulos[i].style.background = getRandom(paleta);
     });
 
     articulos[i].addEventListener("mouseout", function () {
@@ -113,38 +111,41 @@ for (let i = 0; i < articulos.length; i++) {
 const colors = ['red', 'blue', 'green']
 
 const getRandom = (array) => {
-    // código misterioso 
-    // Tenemos que seleccionar una posición de entre todas las que tiene el array.
-    // En el ejemplo tiene 3 posiciones pero podría tener muchas más
 
-
+    /* Tenemos que seleccionar una posición de entre todas las que tiene el array. En el ejemplo tiene 3 posiciones pero podría tener muchas más */
     let elegido = Math.floor(Math.random() * (array.length));
 
-    for (let i = 0; i < array.length; i++) {
-
+/*     for (let i = 0; i < array.length; i++) {
 
         if (elegido == i) {
             return array[i];
         }
-
-    }
+    } */
+    return array[elegido];
 }
 
-    console.log(getRandom(colors)); // imprime 'red', 'blue' o 'green'
-
-
-
-
+console.log(getRandom(colors)); // imprime 'red', 'blue' o 'green'
 
 
 /* 5. Utiliza la función creada getRandom para utilizar colores aleatorios de una paleta que hayas escogido de coolors.co en los apartados anteriores. */
 
 
+let royalBlue = "#01295F";
+let cerulean = "437F97";
+let olive = "849324";
+let selectiveYellow = "FFB30F";
+let red = "FD151B";
 
 
+let paleta = ["royalBlue", "cerulean", "olive", "selectiveYellow", "red"];
+getRandom(paleta);
 
 
 /* 6. Utiliza la función creada getRandom para utilizar gifs aleatorios en los apartados anteriores. */
+
+let gifs = ["./assets/magic-1.gif", "./assets/magic-2.gif", "./assets/magic-3.gif", "./assets/magic-4.gif", "./assets/magic-5.gif", "./assets/magic-6.gif"];
+
+getRandom(gifs);
 
 
 

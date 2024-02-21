@@ -108,16 +108,29 @@ for (let i = 0; i < articulos.length; i++) {
 }
 
 
-/* 4. Crea una función de nombre getRandom que acepte un array con valores y devuelva uno de ellos de manera aleatoria.
+/* 4. Crea una función de nombre getRandom que acepte un array con valores y devuelva uno de ellos de manera aleatoria.*/
 
 const colors = ['red', 'blue', 'green']
 
 const getRandom = (array) => {
-    /* código misterioso 
-}*/
+    // código misterioso 
+    // Tenemos que seleccionar una posición de entre todas las que tiene el array.
+    // En el ejemplo tiene 3 posiciones pero podría tener muchas más
 
-/*console.log(getRandom(colors))
-// imprime 'red', 'blue' o 'green' */
+
+    let elegido = Math.floor(Math.random() * (array.length));
+
+    for (let i = 0; i < array.length; i++) {
+
+
+        if (elegido == i) {
+            return array[i];
+        }
+
+    }
+}
+
+    console.log(getRandom(colors)); // imprime 'red', 'blue' o 'green'
 
 
 

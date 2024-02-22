@@ -20,8 +20,7 @@ let imagenes = document.getElementsByTagName("img");
 // Les damos la propiedad de estar "escuchando" para que cuando se haga click se llame a la funcion que hemos definido
 for (let i = 0; i < imagenes.length; i++) {
     imagenes[i].addEventListener("click", function () {
-       /* imagenes[i].src = "./assets/magic-1.gif"; // Esto funciona */
-       imagenes[i].src = getRandom(gifs); // Esto es una prueba
+       imagenes[i].src = getRandom(gifs); 
     });
 }
 
@@ -61,8 +60,7 @@ for (let i = 0; i < imagenes.length; i++) {
     });
 
     imagenes[i].addEventListener("mouseout", function () {
-        imagenes[i].src = imgOriginal[i]; // No funciona porque envía fuera de local
-        //imagenes[i].src = "index_files/IMG_0545.jpg"; // A capón sí funciona
+        imagenes[i].src = imgOriginal[i]; 
     });
 }
 
@@ -115,12 +113,6 @@ const getRandom = (array) => {
     /* Tenemos que seleccionar una posición de entre todas las que tiene el array. En el ejemplo tiene 3 posiciones pero podría tener muchas más */
     let elegido = Math.floor(Math.random() * (array.length));
 
-/*     for (let i = 0; i < array.length; i++) {
-
-        if (elegido == i) {
-            return array[i];
-        }
-    } */
     return array[elegido];
 }
 
@@ -137,7 +129,8 @@ let selectiveYellow = "FFB30F";
 let red = "FD151B";
 
 
-let paleta = ["royalBlue", "cerulean", "olive", "selectiveYellow", "red"];
+let paleta = ["royalBlue", "cerulean", "olive", "selectiveYellow", "red"]; 
+
 getRandom(paleta);
 
 
